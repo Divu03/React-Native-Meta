@@ -4,7 +4,12 @@ export default function Practice(){
     return(
         <>
             <View>
-                <Text>Hi I am divyesh practicing the React native code</Text>
+                <Text>
+                    Hi I am divyesh practicing the React native code
+                    <Text>
+                        Nested Text
+                    </Text>
+                </Text>
             </View>
         </>
     );
