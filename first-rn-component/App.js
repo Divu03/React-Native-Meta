@@ -11,12 +11,13 @@ export default function App() {
         backgroundColor: '#495E57',
       }}>
     <View   style={{
+      flex:1
       }}   >
       <LLRHeader />
       <WelcomeScreen/>
     </View>
 
-      <View style={{top:290}}>
+      <View>
         <Footer/>
       </View>
     </View>
