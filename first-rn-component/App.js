@@ -15,7 +15,6 @@ export default function App() {
       }}   >
       <LLRHeader />
       <WelcomeScreen/>
-      <WelcomeScreen/>
     </View>
 
       <View>
