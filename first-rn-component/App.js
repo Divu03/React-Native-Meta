@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import LLRHeader from './components/LLRHeader';
 import Footer from './components/Footer';
 import WelcomeScreen from './components/WelcomeScreen';
+import MenuItems from './components/MenuItems';
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
       flex:1
       }}   >
       <LLRHeader />
-      <WelcomeScreen/>
+      <MenuItems/>
     </View>
 
       <View>
