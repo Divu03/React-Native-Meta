@@ -15,7 +15,7 @@ export default function App() {
       flex:1
       }}   >
       <LLRHeader />
-      <MenuItems/>
+      <WelcomeScreen/>
     </View>
 
       <View>
