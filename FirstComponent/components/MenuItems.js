@@ -24,42 +24,37 @@ const menuItemsToDisplay = [
     { name: 'Panna Cotta', price: '$5.00', id: '21V' },
   ];
 
-  const Item = ({ name }) => (
+  const Item = ({ name, price }) => (
     <View style={menuStyles.innerContainer}>
       <Text style={menuStyles.itemText}>{name}</Text>
+      <Text style={menuStyles.itemText}>{price}</Text>
     </View>
   );
 
   const MenuItems = () => {
-    const renderItem = ({ item }) => <Item name={item.name} />;
+    const renderItem = ({ item }) => <Item name={item.name} price={item.price}/>;
   
     return (
       <View style={menuStyles.container}>
-        <Text style={menuStyles.headerText}>View Menu</Text>
         <FlatList data={menuItemsToDisplay} keyExtractor={item => item.id} renderItem={renderItem}></FlatList>
       </View>
     );
   };
   
-  const menuStyles = StyleSheet.create({
-    container: {
-      flex: 0.75,
-    },
-    innerContainer: {
-      paddingHorizontal: 40,
-      paddingVertical: 20,
-      backgroundColor: 'black',
-    },
-    headerText: {
-      color: 'white',
-      fontSize: 40,
-      flexWrap: 'wrap',
-      textAlign: 'center',
-    },
-    itemText: {
-      color: '#F4CE14',
-      fontSize: 36,
-    },
-  });
+const menuStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  innerContainer: {
+    paddingHorizontal: 40,
+    paddingVertical: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  itemText: {
+    color: '#F4CE14',
+    fontSize: 20,
+  },
+});
   
   export default MenuItems;
