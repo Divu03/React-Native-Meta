@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, SectionList } from 'react-native';
 
 const menuItemsToDisplay = [
   {
@@ -51,12 +51,18 @@ const menuItemsToDisplay = [
     </View>
   );
 
+
   const MenuItems = () => {
     const renderItem = ({ item }) => <Item name={item.name} price={item.price}/>;
+    const header = ({section : {title}}) => (
+      <View style={menuStyles.headerStyle}>
+        <Text style={menuStyles.sectionHeader}>{title}</Text>
+      </View>
+    );
   
     return (
       <View style={menuStyles.container}>
-        <FlatList data={menuItemsToDisplay} keyExtractor={item => item.id} renderItem={renderItem}></FlatList>
+        <SectionList keyExtractor={(item, index) => item + index} sections={menuItemsToDisplay} renderItem={renderItem} renderSectionHeader={header}/>
       </View>
     );
   };
@@ -74,6 +80,15 @@ const menuStyles = StyleSheet.create({
   itemText: {
     color: '#F4CE14',
     fontSize: 20,
+  },
+  headerStyle: {
+    backgroundColor: '#F4CE14',
+  },
+  sectionHeader: {
+    color: 'black',
+    fontSize: 26,
+    flexWrap: 'wrap',
+    textAlign: 'center',
   },
 });
   
